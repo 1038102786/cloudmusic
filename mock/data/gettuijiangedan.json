@@ -1,0 +1,26 @@
+{
+    "errNo":0,
+    "data":{
+        "today":{
+            "hover":"根据您的音乐口味每天更新",
+            "imgurl":"",
+            "router":""
+        },
+        "list":[
+            {
+                "listencount":"2345万",
+                "disc":"好听到爆的400首英文歌",
+                "imgurl":"",
+                "hover":"",
+                "router":""
+            },
+            {
+                "listencount":"2345万",
+                "disc":"好听到爆的400首英文歌",
+                "imgurl":"",
+                "hover":"",
+                "router":""
+            }
+        ]
+    }
+}

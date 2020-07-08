@@ -1,28 +1,66 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <titleeare id="titlediv"></titleeare>
+    <div id="menudiv">
+      <lefteare></lefteare>
+      <!-- <menueare></menueare> -->
+      <router-view class='approuterview'></router-view>
+    </div>
+    <buttomeare id="buttomdiv"></buttomeare>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import HelloWorld from './components/HelloWorld.vue';
+import titleeare from './components/title.vue'
+import buttomeare from './components/buttom.vue'
+import lefteare from './components/left.vue'
+//import router from './plugins/router'
+//import menueare from './components/menu.vue'
+@Component({
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+    titleeare,
+    buttomeare,
+    lefteare,
+   
+  },
+})
+export default class App extends Vue {}
 </script>
 
-<style>
+<style scope>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 5px 5px #D1D0D0;
+  min-width: 1080px;
+}
+
+#titlediv{
+    height:60px;
+    width:100%;
+    background-color:#c62F2F;
+}
+
+#menudiv{
+    height: 90%;
+    width:100%;
+    display: flex;
+    background-color: pink;
+    min-height:574px;
+}
+
+#buttomdiv{
+    height:60px;
+    width:100%;
+    background-color:#f6f6f6;
+    border: 1px solid #E1E1E1;
+}
+
+.approuterview{
+  background-color: #fafafa;
+  min-height:574px;
 }
 </style>

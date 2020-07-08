@@ -1,0 +1,35 @@
+{
+    "errNo":0,
+    "data":[
+        {
+            "author":"张杰",
+            "url":"http://music.163.com/song/media/outer/url?id=464351458.mp3",
+            "name":"这就是爱",
+            "islike":true
+        },
+        {
+            "author":"霍尊",
+            "url":"http://music.163.com/song/media/outer/url?id=29759370.mp3",
+            "name":"卷珠帘",
+            "islike":false
+        },
+        {
+            "author":"陈奕迅",
+            "url":"http://music.163.com/song/media/outer/url?id=65766.mp3",
+            "name":"富士山下",
+            "islike":true
+        },
+        {
+            "author":"周深",
+            "url":"http://music.163.com/song/media/outer/url?id=413812448.mp3",
+            "name":"大鱼",
+            "islike":false
+        },
+        {
+            "author":"刘昊霖",
+            "url":"http://music.163.com/song/media/outer/url?id=407761576.mp3",
+            "name":"儿时",
+            "islike":true
+        }
+    ]
+}
