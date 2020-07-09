@@ -28,11 +28,16 @@ export default {
     position: relative;
     z-index: 0;
 }
+.imageshow>p{
+    margin:0px;
+    border: none;
+    line-height: 20px;
+}
 
 .imageshow .listencount{
     position:relative;
     left: 0px;
-    top: 36px;
+    top: 20px;
     z-index: 1;
     background-image: linear-gradient(to right,rgba(248, 244, 244, 0), rgba(99, 96, 96, 0.7));
     opacity: 0.7;

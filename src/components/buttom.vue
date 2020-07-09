@@ -1,9 +1,9 @@
 <template>
     <div class="buttomeare">
-        <audio id="buttomaudio" src="../sound/6-1.mp3" style="{display:false;}"></audio>
+        <audio id="buttomaudio" ref="audio" src="../sound/6-1.mp3" style="{display:false;}"></audio>
         <div class="control">
             <img class="last" @click="next(false)" src="../image/left-circle-fill.png" alt="">
-            <img class="play" @click="play" src="../image/play-circle-fill.png" alt="">
+            <img class="play" @click="play" :src="playUrl" alt="">
             <img class="last" @click="next(true)" src="../image/right-circle-fill.png" alt="">
         </div>
         <div class="progress">
@@ -13,7 +13,8 @@
         </div>
         <div class="tools">
             <img src="../image/喇叭.png" alt="">
-            <el-slider class="volume" v-model="volume"></el-slider>
+            <!-- <el-slider class="volume" v-model="volume"></el-slider> -->
+            <input class="volume" type="range" min="0" :max="256">
             <img src="../image/随机播放.png" @click="setRandom" alt="">
         </div>
     </div>
@@ -34,7 +35,7 @@ export default class buttomeare extends Vue{
     private soundList:any=["6-2.mp3","../sound/6-3.mp3","../sound/bc.mp3"];
     private currentIndex:number=0;
     private random:boolean=false;
-
+    private playUrl:any = require("../image/play-circle-fill.png");
 /**
  * 待完成:
  * 1.图片点击切换
@@ -49,20 +50,21 @@ export default class buttomeare extends Vue{
             console.log(this.soundList);
             this.iniData();
         })
+        // this.changePlayState();
     }
 
     private play():void{
         var audio:any = document.getElementById("buttomaudio");
-        var play:any=document.getElementsByClassName("play");
+        // var play:any=document.getElementsByClassName("play");
         if(audio.paused){
             audio.play();
             console.log("audio.play");
-            this.allseconds=audio.duration.toFixed(0);
+            this.allseconds=parseInt(audio.duration);
             this.progressmax = (this.allseconds/60).toFixed(0)+":"+this.allseconds%60;
             console.log("allseconds",this.allseconds);
 
              this.interval = setInterval(()=>{
-                 this.currentconds=audio.played.end(0).toFixed(0);
+                 this.currentconds=parseInt(audio.played.end(0));
                  if(this.currentconds>60*60)
                  {
                      this.progressvalue =(this.currentconds/60/60).toFixed(0)+":"+ (this.currentconds/60).toFixed(0)+":"+this.currentconds%60;
@@ -76,16 +78,26 @@ export default class buttomeare extends Vue{
                  
                  console.log("currentconds",this.currentconds);
             },500);
-            play.setAttribute('src',"/image/poweroff-circle-fill.png");
+            // play.setAttribute('src',"/image/poweroff-circle-fill.png");
         }else{
             clearInterval(this.interval);
             audio.pause();
             console.log("audio.stop");
-            play.src="/image/play-circle-fill.png";
+            // play.src="/image/play-circle-fill.png";
         }
+        this.changePlayState();
         
     }
 
+    private changePlayState() {
+        let audio:any = document.getElementById("buttomaudio")
+        if(audio.paused) {
+            this.playUrl = require("../image/play-circle-fill.png");
+        }
+        else {
+            this.playUrl = require("../image/poweroff-circle-fill.png");
+        }
+    }
     private next(isnext:boolean):void{
         if(this.random)
         {
@@ -169,11 +181,47 @@ export default class buttomeare extends Vue{
     float: left;
     padding-top: 19px;
 }
-.tools .volume{
+/* .tools .volume{
     width: 100px;
     float: left;
     margin: 14px;
     margin-left: 15px;
     margin-right: 15px;
+} */
+input[type="range"] {
+    -webkit-appearance: none; /*去除默认样式*/
+    float: left;
+    margin-top:30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #ebeff4;
+    border: 1px solid #ebeff4;
+    border-radius: 3px;
+    width: 100px;
+    height:6px;
+    padding: 0;
+}
+/**滑块样式 */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 10px;
+    width:10px;
+    border-radius: 5px;
+}  
+input[type="range"]::-webkit-range-progress {
+    background: linear-gradient(to right, #059CFA, white 100%, white);
+}
+
+input[type="range"]::-webkit-fill-lower {
+    /*进度条已填充的部分*/
+    background: #c62F2F;
+}
+
+input[type="range"]::-webkit-fill-upper {
+    /*进度条未填充的部分*/
+    background: #ffffff;
+}
+input[type=range]:focus {
+    outline: none;
 }
 </style>

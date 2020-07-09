@@ -1,26 +1,18 @@
 <template>
     <div class="titleeare">
-        <div class="name">
-            <link rel="stylesheet" type="image/x-icon" href="../image/format.ico">
+        <!-- <img class="titleimage" src="../image/网易云音乐.png" alt=""> -->
+        <div class="titlename">
+            <img src="../image/网易云音乐.png" alt="">
             <p>网易云音乐</p>
+ 
         </div>
-        <el-autocomplete
-            popper-class="my-autocomplete"
-            v-model="state"
-            :fetch-suggestions="querySearch"
-            placeholder="请输入内容"
-            class="inputbox"
-            @select="handleSelect">
-            <i
-                class="el-icon-edit el-input__icon"
-                slot="suffix"
-                @click="handleIconClick">
-            </i>
-            <template slot-scope="{ item }">
-                <div class="name">{{ item.value }}</div>
-                <span class="addr">{{ item.address }}</span>
-            </template>
-        </el-autocomplete>
+        <input class="inputsearch" type="text" placeholder="搜索音乐，视频，歌词，电台" >
+        <i></i>
+        <div class="righttools">
+            <img src="../image/最小化.png" alt="">
+            <img src="../image/全屏.png" alt="">
+            <img src="../image/关闭.png" alt="">
+        </div>
     </div>
 </template>
 
@@ -34,40 +26,68 @@ export default {
 <style scoped>
 .titleeare{
     float: left;
+    height: 100%;
 }
-.name{
-    margin-left: 30px;
-}
-.titleeare img{
+/* .titleimage{
+    padding: 0;
+    margin:0;
     float: left;
+    height: 120px;
+    width: 190px;
+} */
+.titlename{
+    margin-left: 20px;
+    float: left;
+}
+.titlename img{
+    margin-top: 15px;
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 5px solid white;
+    border-radius: 14px;
 }
 .titleeare p{
     float: left;
     color: white;
     font-size: 20px;
     font-family: fantasy;
+    margin: 0;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
-/* li {
-    line-height: normal;
-    padding: 7px;
-}
-.name {
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
-.addr {
-    font-size: 12px;
-    color: #b4b4b4;
-}
-
-.highlighted .addr {
-    color: #ddd;
-} */
-input.el-input__inner{
+.inputsearch{
+    float: left;
     background-color: #A82828;
-    border: 1px solid #A82828;
-    height: 30px;
+    height: 25px;
+    width: 250px;
     border-radius: 15px;
+    border: none;
+    margin-top: 18px;
+    margin-left: 30px;
+    padding-left: 10px;
+    color: white;
+}
+
+.inputsearch:focus{
+    outline: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #C77373;
+    margin-left: 10px;
+}
+
+.righttools{
+    float:right;
+    margin:15px;
+}
+
+.righttools>img{
+    width: 16px;
+    height: 16px;
+    padding: 8px;
 }
 </style>

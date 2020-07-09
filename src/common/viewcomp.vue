@@ -35,7 +35,7 @@ export default class viewcomp extends Vue{
 </script>
 
 
-<style scope>
+<style scoped>
     .alllist{
         height:90%;
         width:100%;

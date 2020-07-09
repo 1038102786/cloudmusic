@@ -61,21 +61,24 @@ export default class leftview extends Vue{
 
 <style scoped>
 .allview{
+    position: absolute;
     height:100%;
     width: 165px;
     display:flex;
 	flex-flow: column;
     background-color: #f5f5f7;
     border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    justify-content: space-between;
 }
 .alllist{
     width :100%;
-    height:90%;
+    /* height:90%; */
     float: left;
     margin: 6px;
     padding: 0;
     overflow:auto;
-    min-height:508px;
+    /* min-height:508px; */
 }
 
 .alllist .listview{

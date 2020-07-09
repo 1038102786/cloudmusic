@@ -45,6 +45,7 @@ export default class App extends Vue {}
 }
 
 #menudiv{
+    position: relative;
     height: 90%;
     width:100%;
     display: flex;
@@ -53,6 +54,7 @@ export default class App extends Vue {}
 }
 
 #buttomdiv{
+    position: relative;
     height:60px;
     width:100%;
     background-color:#f6f6f6;
@@ -62,5 +64,8 @@ export default class App extends Vue {}
 .approuterview{
   background-color: #fafafa;
   min-height:574px;
+  position: absolute;
+  height: 100%;
+  left: 165px;
 }
 </style>
