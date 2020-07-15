@@ -49,13 +49,29 @@ export default class viewcomp extends Vue{
         padding:0;
         flex-direction: row;
         justify-content: center;
+        margin-left: 20px;
+        list-style:none;
+        list-style-image:url("/image/result_icon_gaoshou@2x.png");
     }
-    .viewshow:active{
+    .viewshow::selection{
         background-color: #E6E7EA;
     }
-    .viewshow:hover{
-        font-family:"Times New Roman",bold,Georgia,Serif;
+    .viewshow .router-link-active{
+        /* background-color: #E6E7EA; */
     }
-    
+    .viewshow:hover{
+        color: black;
+        /* font-family:"Times New Roman",bold,Georgia,Serif; */
+    }
+    .viewtitle{
+        line-height: 30px;
+        list-style:none;
+
+    }
+    a:-webkit-any-link {
+        color:#7D7D7D;
+        cursor: default;
+        text-decoration: none;
+    }
 </style>
 

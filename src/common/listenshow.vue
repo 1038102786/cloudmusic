@@ -29,7 +29,7 @@ export default {
     padding: 0;
     margin: 0;
     border: 1px solid #E1E1E1;
-    height:50px;
+    height:100%;
     width: 165px;
     font-size: 11px;
     float: left;
@@ -38,7 +38,6 @@ export default {
     float: left;
     width: 50px;
     height:50px;
-    
 }
 .name{
     float: left;
@@ -48,6 +47,9 @@ export default {
     max-width: 90px;
 }
 .name>p{
+    padding: 0;
+    margin:0;
+    line-height:25px;
     overflow: hidden;
     white-space:nowrap;
 }

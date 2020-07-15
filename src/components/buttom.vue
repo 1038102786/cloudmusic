@@ -14,7 +14,9 @@
         <div class="tools">
             <img src="../image/喇叭.png" alt="">
             <!-- <el-slider class="volume" v-model="volume"></el-slider> -->
-            <input class="volume" type="range" min="0" :max="256">
+            <!-- <input class="volume" type="range" min="0" value="113" :max="256"> -->
+            <!-- <progress max="256" value="156"></progress> -->
+            <lyui-progress class="volumeprogress"></lyui-progress>
             <img src="../image/随机播放.png" @click="setRandom" alt="">
         </div>
     </div>
@@ -22,9 +24,14 @@
 
 
 <script lang="ts">
-import {Vue,Component} from 'vue-property-decorator'
+import {Vue,Component} from 'vue-property-decorator';
+import lyuiProgress from '../common/lyui-progress.vue';
 var axios = require('../../http/api1')
-@Component({})
+@Component({
+    components:{
+        lyuiProgress
+    }
+})
 export default class buttomeare extends Vue{
     private progressvalue:string='00:00';
     private progressmax:string='00:00';
@@ -188,15 +195,22 @@ export default class buttomeare extends Vue{
     margin-left: 15px;
     margin-right: 15px;
 } */
+.volumeprogress{
+    float: left;
+    margin-top:30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100px;
+    height:6px;
+    padding: 0;
+}
+
 input[type="range"] {
     -webkit-appearance: none; /*去除默认样式*/
     float: left;
     margin-top:30px;
     margin-left: 15px;
     margin-right: 15px;
-    background-color: #ebeff4;
-    border: 1px solid #ebeff4;
-    border-radius: 3px;
     width: 100px;
     height:6px;
     padding: 0;
@@ -204,23 +218,40 @@ input[type="range"] {
 /**滑块样式 */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 10px;
-    width:10px;
+    height: 15px;
+    width:15px;
+    background: #E1E1E1;
+    border: #D1D0D0 solid 1px;
+    border-radius: 8px;
+    margin-top:-5px;
+} 
+/**滑条样式 */ 
+input[type="range"]::-webkit-slider-runnable-track{
+    background:#c62F2F;
     border-radius: 5px;
-}  
-input[type="range"]::-webkit-range-progress {
-    background: linear-gradient(to right, #059CFA, white 100%, white);
+    height:6px;
+    align-content: center;
+    vertical-align: middle;
 }
 
-input[type="range"]::-webkit-fill-lower {
-    /*进度条已填充的部分*/
-    background: #c62F2F;
+progress{
+    width: 168px;
+    height: 6px;
+    border-radius: 3px;
 }
 
-input[type="range"]::-webkit-fill-upper {
-    /*进度条未填充的部分*/
-    background: #ffffff;
+progress::-webkit-progress-bar
+{
+    background-color:#d7d7d7;
+    border-radius: 3px;
 }
+
+progress::-webkit-progress-value
+{
+    background-color:#c62F2F;
+    border-radius: 3px;
+}
+
 input[type=range]:focus {
     outline: none;
 }

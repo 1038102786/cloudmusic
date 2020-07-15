@@ -35,7 +35,6 @@ export default class App extends Vue {}
   margin: 0;
   padding: 0;
   box-shadow: 0px 5px 5px #D1D0D0;
-  min-width: 1080px;
 }
 
 #titlediv{
@@ -51,6 +50,7 @@ export default class App extends Vue {}
     display: flex;
     background-color: pink;
     min-height:574px;
+    box-sizing: border-box;
 }
 
 #buttomdiv{
@@ -63,9 +63,10 @@ export default class App extends Vue {}
 
 .approuterview{
   background-color: #fafafa;
-  min-height:574px;
   position: absolute;
   height: 100%;
   left: 165px;
+  overflow: scroll;
+  box-sizing: border-box;
 }
 </style>

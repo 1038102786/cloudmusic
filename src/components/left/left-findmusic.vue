@@ -27,8 +27,8 @@ export default {
 
 <style scope>
 .leftfindmusic{
-    width:100%;
-    height:100%;
+    margin: 0;
+    padding: 0;
 }
 .titlemenu{
     left: 12%;
@@ -39,8 +39,6 @@ export default {
 } 
 
 .router-link-item{
-    padding: 0.3%;
-    margin: 1%;
     display: block;
     width: 70px;
     cursor:pointer;
@@ -56,5 +54,6 @@ export default {
     border-top-style:solid;
     border-color: gray;
     border-width: 1px;
+    box-sizing: border-box;
 }
 </style>

@@ -6,8 +6,11 @@
             <p>网易云音乐</p>
  
         </div>
-        <input class="inputsearch" type="text" placeholder="搜索音乐，视频，歌词，电台" >
-        <i></i>
+        <div class="searchbox">
+            <input class="inputsearch" type="text" placeholder="搜索音乐，视频，歌词，电台" >
+            <img src="../image/search (1).png" alt="">
+            <!-- <i class="searchicon"></i> -->
+        </div>
         <div class="righttools">
             <img src="../image/最小化.png" alt="">
             <img src="../image/全屏.png" alt="">
@@ -57,12 +60,32 @@ export default {
     margin-top: 15px;
     margin-left: 10px;
 }
-
-.inputsearch{
+.searchbox{
     float: left;
+    height: 100%;
+    width: 250px;
+    display: flex;
+    position: relative
+}
+.searchbox>img{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin-top: 18px;
+    position:absolute;
+    right: 6px;
+    top: 3px;
+}
+.searchbox>img:hover{
+    background-image:url("/image/search.png");
+}
+/* .searchicon{
+    background-image: url("../image/search.png");
+} */
+.inputsearch{
     background-color: #A82828;
     height: 25px;
-    width: 250px;
+    width: 100%;
     border-radius: 15px;
     border: none;
     margin-top: 18px;
@@ -90,4 +113,5 @@ input::-webkit-input-placeholder {
     height: 16px;
     padding: 8px;
 }
+
 </style>
